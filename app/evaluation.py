@@ -7,6 +7,11 @@ from numba import njit, int64, int32, uint32, uint64
 #Temporal Difference took too long, trained on stockfish data. 
 MODEL_NPZ = "model_numba.npz"
 
+
+
+# Parameters are both for Sparse Chess-Geometric Transformer but also for Least
+# Square regression baseline with typical chess features (material, doubled pawns, isolated pawns, 
+# bishop pair, passed pawns, piece-square tables).
 _z = np.load(MODEL_NPZ, allow_pickle=False)
 
 NUM_LAYERS = int(_z["num_layers"])
